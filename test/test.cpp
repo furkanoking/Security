@@ -12,5 +12,8 @@ int main() {
     std::cout<<std::hex<<*(a+1)<<std::endl;;
     std::cout<<std::hex<<*(a+2)<<std::endl;;
     std::cout<<std::hex<<*(a+3)<<std::endl;;
+
+    uint64_t y=12;
+    mysecurity.MakeEncryption(y);
     //mysecurity.yap();
 }
