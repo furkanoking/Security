@@ -5,25 +5,27 @@
  * @brief It is a class that hve certain abilities such as taking Hash value, encoding and generating keys
  * 
  */
+
+ template <typename T>
 class Security {
     public:
     Security();
     ~Security();
 
+    Security operator=(Security& OtherSecurity);
+
 
     /**
      * @brief The funcions find the hash value of an integer. 
      * 
-     * @tparam T 
      * @param data 
      * @param HashedValue 
      */
-    template<typename T>
     void MakeHash(T data,uint64_t* HashedValue);
 
-    
-    template < typename T>
-    void MakeEncryption(T data) noexcept;
+    void MakeEncryption(T data, T** EncryptedData) noexcept;
+
+    void MakeDecryption(T data, T** DecryptedData) noexcept;
 
     private:
     unsigned char Key[32]; // 256 bit
@@ -36,3 +38,4 @@ class Security {
     void randomKeyGenerating();
 
 };
+
